@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Pizza App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="app">
+    <div class="card">
+
+        <h1>🍕 Pizza App</h1>
+        <p class="subtitle">Arma tu pedido 🍽️</p>
+
+        <div class="section">
+            <label>Tipo de pizza</label>
+            <select id="pizza">
+                <option value="14000">Queso - $14.000</option>
+                <option value="16000">Jamón y queso - $16.000</option>
+                <option value="20000">Especial - $20.000</option>
+            </select>
+        </div>
+
+        <div class="section">
+            <label>Cantidad</label>
+            <input type="number" id="cantidad" min="1" value="1">
+            <small id="errorCantidad" class="error"></small>
+        </div>
+
+        <div class="section">
+            <label>Extras (<span id="contadorExtras">0</span>)</label>
+            <div class="extras">
+                <label><input type="checkbox" value="2000"> Maíz - $2.000</label>
+                <label><input type="checkbox" value="10000"> Queso extra - $10.000</label>
+                <label><input type="checkbox" value="5000"> Tocineta - $5.000</label>
+                <label><input type="checkbox" value="4000"> Champiñones - $4.000</label>
+            </div>
+        </div>
+
+        <div class="preview">
+            Total estimado: <strong id="totalPreview">$0</strong>
+        </div>
+
+        <button id="calcular">Calcular pedido</button>
+
+        <div id="resultado" class="resultado"></div>
+
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,204 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 🌅 FONDO ATARDECER REALISTA */
+body {
+    font-family: 'Segoe UI', sans-serif;
+
+    background: linear-gradient(
+        180deg,
+        #ff3c00 0%,      /* rojo intenso */
+        #ff6a00 20%,     /* naranja fuerte */
+        #ff9e2c 40%,     /* naranja claro */
+        #ffd166 60%,     /* dorado */
+        #c77dff 80%,     /* violeta suave */
+        #5a189a 100%     /* cielo profundo */
+    );
+
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+    overflow-y: auto;
+}
+
+/* ☀️ EFECTO SOL */
+body::before {
+    content: "";
+    position: fixed;
+    top: -120px;
+    right: -120px;
+    width: 350px;
+    height: 350px;
+
+    background: radial-gradient(circle, rgba(255, 200, 100, 0.7), transparent);
+    filter: blur(90px);
+    z-index: 0;
+}
+
+/* CONTENEDOR */
+.app {
+    width: 100%;
+    max-width: 350px;
+    position: relative;
+    z-index: 1;
+}
+
+/* TARJETA GLASS */
+.card {
+    backdrop-filter: blur(18px);
+    background: rgba(255, 255, 255, 0.15);
+    padding: 25px;
+    border-radius: 20px;
+
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+
+    animation: fadeIn 0.8s ease;
+}
+
+/* ANIMACIÓN ENTRADA */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* TITULOS */
+h1 {
+    text-align: center;
+    color: white;
+    text-shadow: 0 3px 10px rgba(0,0,0,0.4);
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: #ffe0c7;
+}
+
+/* SECCIONES */
+.section {
+    margin-bottom: 15px;
+}
+
+.section label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    color: white;
+}
+
+/* INPUTS */
+select, input {
+    width: 100%;
+    padding: 9px;
+    border-radius: 12px;
+    border: none;
+
+    background: rgba(255,255,255,0.75);
+    color: #333;
+
+    transition: 0.3s;
+}
+
+select:focus, input:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(255,150,0,0.7);
+}
+
+/* EXTRAS GRID */
+.extras {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+
+.extras label {
+    background: rgba(255,255,255,0.6);
+    padding: 6px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.extras label:hover {
+    background: rgba(255,255,255,0.9);
+    transform: scale(1.03);
+}
+
+/* BOTÓN PRINCIPAL */
+button {
+    width: 100%;
+    padding: 12px;
+    border-radius: 14px;
+    border: none;
+
+    background: linear-gradient(135deg, #ff7e00, #ff3c00);
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(255, 80, 0, 0.6);
+}
+
+/* ERROR */
+.error {
+    color: #ffd6d6;
+    font-size: 12px;
+}
+
+/* PREVIEW */
+.preview {
+    margin: 12px 0;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
+
+/* RESULTADO */
+.resultado {
+    margin-top: 15px;
+    padding: 15px;
+    border-radius: 15px;
+
+    background: rgba(255,255,255,0.7);
+    color: #222;
+
+    opacity: 0;
+    transform: translateY(15px);
+    transition: 0.5s;
+}
+
+/* ANIMACIÓN RESULTADO */
+.resultado.mostrar {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* SCROLL BONITO */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.5);
+    border-radius: 10px;
+}
